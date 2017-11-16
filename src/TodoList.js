@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TodoItems from './TodoItems';
 import './TodoList.css';
 
@@ -65,7 +65,7 @@ class TodoList extends React.Component {
     var closedItems = this.state.closed;
 
     var filteredPendingItems = this.state.pending.filter(function (item) {
-      if (item.key == inputItem.key) {
+      if (item.key === inputItem.key) {
         closedItems.unshift(inputItem);
         return false;
       }
@@ -75,7 +75,7 @@ class TodoList extends React.Component {
     });
 
     var filteredOpenItems = this.state.open.filter(function (item) {
-      if (item.key == inputItem.key) {
+      if (item.key === inputItem.key) {
         filteredPendingItems.unshift(inputItem);
         return false;
       }
